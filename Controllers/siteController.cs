@@ -18,7 +18,10 @@ namespace WEBGIS.Controllers
             return View(_context.Sites.ToList());
         }
 
-        
-        
+        public IActionResult Create()
+        {
+            return View();
+        }
+
     }
 }

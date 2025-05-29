@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/muRaaOkrgPc0tFDp5ijAdA6BczChIP5EXkadLkibTMisMb+ZUcA0gxWFMM3K+cIQ03tv8vyWjbEyN9Ldtwg5A==",
+  "dgSpecHash": "6ADHH41fkFp8izV1c2gwdRyxSEW8bYt56AEeSWCBHLmEQgs+jquyTcp96cY/nH9u8aTlmyYOeCz+tiU3hsQDoQ==",
   "success": true,
   "projectFilePath": "/home/yassine/Documents/dotnetProject/WEBGIS/WEBGIS.csproj",
   "expectedPackageFiles": [
@@ -98,7 +98,9 @@
     "/home/yassine/.nuget/packages/microsoft.visualstudio.web.codegeneration.utils/9.0.0/microsoft.visualstudio.web.codegeneration.utils.9.0.0.nupkg.sha512",
     "/home/yassine/.nuget/packages/microsoft.visualstudio.web.codegenerators.mvc/9.0.0/microsoft.visualstudio.web.codegenerators.mvc.9.0.0.nupkg.sha512",
     "/home/yassine/.nuget/packages/mono.texttemplating/3.0.0/mono.texttemplating.3.0.0.nupkg.sha512",
-    "/home/yassine/.nuget/packages/nettopologysuite/2.5.0/nettopologysuite.2.5.0.nupkg.sha512",
+    "/home/yassine/.nuget/packages/nettopologysuite/2.6.0/nettopologysuite.2.6.0.nupkg.sha512",
+    "/home/yassine/.nuget/packages/nettopologysuite.features/2.0.0/nettopologysuite.features.2.0.0.nupkg.sha512",
+    "/home/yassine/.nuget/packages/nettopologysuite.io.geojson/4.0.0/nettopologysuite.io.geojson.4.0.0.nupkg.sha512",
     "/home/yassine/.nuget/packages/nettopologysuite.io.postgis/2.1.0/nettopologysuite.io.postgis.2.1.0.nupkg.sha512",
     "/home/yassine/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/home/yassine/.nuget/packages/npgsql/9.0.3/npgsql.9.0.3.nupkg.sha512",
@@ -128,7 +130,6 @@
     "/home/yassine/.nuget/packages/system.diagnostics.eventlog/8.0.0/system.diagnostics.eventlog.8.0.0.nupkg.sha512",
     "/home/yassine/.nuget/packages/system.formats.asn1/9.0.0-rc.2.24473.5/system.formats.asn1.9.0.0-rc.2.24473.5.nupkg.sha512",
     "/home/yassine/.nuget/packages/system.io.pipelines/9.0.5/system.io.pipelines.9.0.5.nupkg.sha512",
-    "/home/yassine/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
     "/home/yassine/.nuget/packages/system.reflection.metadata/8.0.0/system.reflection.metadata.8.0.0.nupkg.sha512",
     "/home/yassine/.nuget/packages/system.reflection.metadataloadcontext/8.0.0/system.reflection.metadataloadcontext.8.0.0.nupkg.sha512",
     "/home/yassine/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",

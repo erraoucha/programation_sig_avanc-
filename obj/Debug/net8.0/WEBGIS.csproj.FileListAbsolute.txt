@@ -258,3 +258,5 @@
 /home/yassine/Documents/dotnetProject/WEBGIS/obj/Debug/net8.0/EFCoreNpgsqlNetTopologySuite.cs
 /home/yassine/Documents/dotnetProject/WEBGIS/obj/Debug/net8.0/WEBGIS.csproj.CopyComplete
 /home/yassine/Documents/dotnetProject/WEBGIS/obj/Debug/net8.0/WEBGIS.sourcelink.json
+/home/yassine/Documents/dotnetProject/WEBGIS/bin/Debug/net8.0/NetTopologySuite.Features.dll
+/home/yassine/Documents/dotnetProject/WEBGIS/bin/Debug/net8.0/NetTopologySuite.IO.GeoJSON.dll

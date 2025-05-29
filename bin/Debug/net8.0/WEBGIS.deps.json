@@ -11,6 +11,8 @@
           "Microsoft.EntityFrameworkCore.Design": "9.0.5",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.5",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "9.0.0",
+          "NetTopologySuite": "2.6.0",
+          "NetTopologySuite.IO.GeoJSON": "4.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
           "Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite": "9.0.4"
         },
@@ -1518,20 +1520,41 @@
           }
         }
       },
-      "NetTopologySuite/2.5.0": {
-        "dependencies": {
-          "System.Memory": "4.5.4"
-        },
+      "NetTopologySuite/2.6.0": {
         "runtime": {
-          "lib/netstandard2.0/NetTopologySuite.dll": {
+          "lib/netstandard2.1/NetTopologySuite.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.0"
           }
         }
       },
+      "NetTopologySuite.Features/2.0.0": {
+        "dependencies": {
+          "NetTopologySuite": "2.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.Features.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "NetTopologySuite.IO.GeoJSON/4.0.0": {
+        "dependencies": {
+          "NetTopologySuite": "2.6.0",
+          "NetTopologySuite.Features": "2.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.IO.GeoJSON.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
       "NetTopologySuite.IO.PostGis/2.1.0": {
         "dependencies": {
-          "NetTopologySuite": "2.5.0"
+          "NetTopologySuite": "2.6.0"
         },
         "runtime": {
           "lib/netstandard2.1/NetTopologySuite.IO.PostGis.dll": {
@@ -1586,7 +1609,7 @@
       },
       "Npgsql.NetTopologySuite/9.0.3": {
         "dependencies": {
-          "NetTopologySuite": "2.5.0",
+          "NetTopologySuite": "2.6.0",
           "NetTopologySuite.IO.PostGis": "2.1.0",
           "Npgsql": "9.0.3"
         },
@@ -1804,7 +1827,6 @@
           }
         }
       },
-      "System.Memory/4.5.4": {},
       "System.Reflection.Metadata/8.0.0": {
         "dependencies": {
           "System.Collections.Immutable": "8.0.0"
@@ -2533,12 +2555,26 @@
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
     },
-    "NetTopologySuite/2.5.0": {
+    "NetTopologySuite/2.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5/+2O2ADomEdUn09mlSigACdqvAf0m/pVPGtIPEPQWnyrVykYY0NlfXLIdkMgi41kvH9kNrPqYaFBTZtHYH7Xw==",
-      "path": "nettopologysuite/2.5.0",
-      "hashPath": "nettopologysuite.2.5.0.nupkg.sha512"
+      "sha512": "sha512-1B1OTacTd4QtFyBeuIOcThwSSLUdRZU3bSFIwM8vk36XiZlBMi3K36u74e4OqwwHRHUuJC1PhbDx4hyI266X1Q==",
+      "path": "nettopologysuite/2.6.0",
+      "hashPath": "nettopologysuite.2.6.0.nupkg.sha512"
+    },
+    "NetTopologySuite.Features/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RDbEpujDL0bsAyTMHlbKj36KIPhUrtSGUaO/jUjMnsLcixrJFwoDJ8p717FdgMHpQDrcEJAKF+QsAlYsSULkew==",
+      "path": "nettopologysuite.features/2.0.0",
+      "hashPath": "nettopologysuite.features.2.0.0.nupkg.sha512"
+    },
+    "NetTopologySuite.IO.GeoJSON/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AWpcRwPAIrUZfghQat7bXK9dAckhuAxKF/Yvp+DoctLpct7pilj0Y+VCiof/8NlaclGlrISSfgnu3Tbvq6T2ug==",
+      "path": "nettopologysuite.io.geojson/4.0.0",
+      "hashPath": "nettopologysuite.io.geojson.4.0.0.nupkg.sha512"
     },
     "NetTopologySuite.IO.PostGis/2.1.0": {
       "type": "package",
@@ -2742,13 +2778,6 @@
       "sha512": "sha512-5WXo+3MGcnYn54+1ojf+kRzKq1Q6sDUnovujNJ2ky1nl1/kP3+PMil9LPbFvZ2mkhvAGmQcY07G2sfHat/v0Fw==",
       "path": "system.io.pipelines/9.0.5",
       "hashPath": "system.io.pipelines.9.0.5.nupkg.sha512"
-    },
-    "System.Memory/4.5.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
-      "path": "system.memory/4.5.4",
-      "hashPath": "system.memory.4.5.4.nupkg.sha512"
     },
     "System.Reflection.Metadata/8.0.0": {
       "type": "package",

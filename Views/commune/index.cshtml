@@ -1,0 +1,66 @@
+@model IEnumerable<WEBGIS.Models.Commune>
+    @section Scripts {
+<link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css" />
+<script src="https://js.arcgis.com/4.26/"></script>
+<script src="~/js/map.js"></script>
+}
+
+
+<div class="container">
+<!-- Carte (au-dessus du tableau) -->
+<div id="mapDiv" style="height: 500px; width: 100%;"></div>
+<!-- Tableau (en-dessous de la carte) -->
+<a asp-action="Create">Create New Commune</a>
+<table class="table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Prefecture</th>
+<th>Area</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+@foreach (var item in Model)
+{
+<tr>
+<td>@item.commune_ar</td>
+<td>@item.prefecture</td>
+<td>@item.shape_area</td>
+<td>
+<a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+<a asp-action="Details" asp-route-id="@item.id">Details</a> |
+<a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+</td>
+</tr>
+}
+</tbody>
+</table>
+</div>
+<h2>Commune List</h2>
+<a asp-action="Create">Create New Commune</a>
+<table class="table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Prefecture</th>
+<th>Area</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+@foreach (var item in Model)
+{
+<tr>
+<td>@item.commune_ar</td>
+<td>@item.prefecture</td>
+<td>@item.shape_area</td>
+<td>
+<a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+<a asp-action="Details" asp-route-id="@item.id">Details</a> |
+<a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+</td>
+</tr>
+}
+</tbody>
+</table>

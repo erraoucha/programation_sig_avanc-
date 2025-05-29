@@ -1,0 +1,113 @@
+@model IEnumerable<WEBGIS.Models.Site>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.26/"></script>
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "esri/layers/GeoJSONLayer",
+            "esri/Graphic"
+        ], function (Map, MapView, GeoJSONLayer, Graphic) {
+
+            const geojsonLayer = new GeoJSONLayer({
+                url: "http://127.0.0.1/qgisserver/cgi_bin/qgis_mapserv.fcgi?MAP=/home/yassine/Desktop/casa.qgs&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAME=Site&outputFormat=application/json"
+            });
+
+            const map = new Map({
+                basemap: "streets-navigation-vector",
+                layers: [geojsonLayer]
+            });
+
+            const view = new MapView({
+                container: "mapDiv",
+                map: map,
+                center: [-7.62, 33.59],
+                zoom: 10
+            });
+
+            view.when(() => {
+                document.addEventListener("click", function (e) {
+                    if (e.target && e.target.matches(".zoom-to-site")) {
+                        const siteId = e.target.getAttribute("data-siteid");
+
+                        geojsonLayer.queryFeatures({
+                            where: `site_id = ${siteId}`, // Assure-toi que "site_id" est le bon nom de champ
+                            returnGeometry: true,
+                            outFields: ["*"]
+                        }).then(function (results) {
+                            if (results.features.length > 0) {
+                                const feature = results.features[0];
+
+                                // Zoom sur la géométrie
+                                view.goTo({
+                                    target: feature.geometry,
+                                    zoom: 14
+                                });
+
+                                // Mettre en surbrillance le site
+                                view.graphics.removeAll(); // nettoyer les anciens graphiques
+                                view.graphics.add(new Graphic({
+                                    geometry: feature.geometry,
+                                    symbol: {
+                                        type: "simple-fill",
+                                        color: [0, 0, 255, 0.2], // bleu clair transparent
+                                        outline: {
+                                            color: [0, 0, 255], // bleu foncé
+                                            width: 2
+                                        }
+                                    }
+                                }));
+                            } else {
+                                console.warn("Site non trouvé");
+                            }
+                        }).catch(function (error) {
+                            console.error("Erreur lors de la requête :", error);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+
+
+
+<h2>Sites List</h2>
+<div class="container">
+    <!-- Carte (au-dessus du tableau) -->
+    <div id="mapDiv" style="height: 500px; width: 100%;"></div>
+
+    <!-- Tableau (en-dessous de la carte) -->
+    <a asp-action="Create">Create New Site</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Site</th>
+                <th>Reference fonci7re </th>
+                <th> Etat </th>
+                <th> Prefecture </th>
+                <th> Commune / Arrondissement </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @item.site </td>
+                    <td> @item.reference </td>
+                    <td> @item.etat </td>
+                    <td> @item.prefecture </td>
+                    <td> @item.commune_ce </td>
+                    <td>
+                        <button class="btn btn-sm btn-primary zoom-to-site" data-siteid="@item.site_id">Voir sur
+                            carte</button>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
